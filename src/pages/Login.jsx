@@ -36,7 +36,7 @@ export default function Login({ onLoggedIn }) {
       setStep('otp')
     } catch (err) {
       console.error(err)
-      setError('OTP পাঠাতে সমস্যা হয়েছে। নম্বরটি আবার যাচাই করুন।')
+      setError('ERR: ' + (err.code || err.message || 'unknown'))
     } finally {
       setLoading(false)
     }
